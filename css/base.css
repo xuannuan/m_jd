@@ -1,0 +1,115 @@
+*,
+::before,::after{
+    margin: 0;
+    padding:0;
+    /*取消默认高亮显示*/
+    -webkit-tap-highlight-color:transparent;
+    /*设置IE盒子模型*/
+    box-sizing: border-box;
+}
+html,body{
+    /*sans-serif是移动端默认字体*/
+    font-family: 'Microsoft YaHei',sans-serif;
+    font-size: 16px;
+    color: #000;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+input,textarea{
+    border: none;
+    resize:none;
+    outline-style: none;
+    /*清除浏览器默认的样式（立体的）*/
+    -webkit-appearance:none;
+}
+
+
+/*清除浮动*/
+.clearfix::before,
+.clearfix::after{
+    content: '.';
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+/*精灵图*/
+[class^='icon-'],
+[class*=' icon-'] {
+    background: url(../images/sprites.png) no-repeat;
+    background-size: 200px 200px;
+    /*图片缩小比例*/
+}
+
+.header{
+    width: 100%;
+    height: 45px;
+    background: url(../images/header-bg.png) repeat-x;
+    background-size: 1px 44px;
+    /*缩小一倍使得屏幕更清晰*/
+    position: absolute;
+    z-index:1000;
+    /*这样左边的分类区域就无法压住back图案,在category.html中*/
+}
+header .icon-back{
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: 12px 10px;
+    background-position: -20px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+header form{
+    width: 100%;
+    height: 44px;
+    padding:0 40px;
+
+}
+header form input{
+    display: block;
+    width: 100%;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #bfbfbf;
+    margin-top:6px ;
+}
+header h2{
+    line-height: 45px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: inherit;
+}
+/*对背景图片的两种定位方式*/
+
+/*header .icon-menu{*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*    display: block;*/
+/*    margin: 12px 10px;*/
+/*    background-position: -60px 0;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    right: 0;*/
+/*}*/
+header .icon-menu{
+    width: 40px;
+    height: 44px;
+    display: block;
+    padding: 12px 10px;
+    background-position: -60px 0;
+    background-clip: content-box;
+    background-origin: content-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <style>
+        p{
+            transform: translateX(10px) rotate(30deg);
+        }
+    </style>
+</head>
+<body>
+To animate an element, add the class animated to an element. You can include the class infinite for an infinite loop.
+Finally you need to add one of the following classes to the element:like(animated infinite flash)
+<h1 class="animated infinite flash">flash</h1>
+<h1 class="animated infinite bounce delay-2s">Example</h1>
+<p>i can fly</p>
+</body>
+</html>
+<script>
+    var hi=document.querySelectorAll('h1');
+    var h1=hi[0];
+    var h2=hi[1];
+    var k=0;
+    console.log('outside1'+k);
+
+    h1.addEventListener('click',function(){
+        k+=9;
+        console.log('h1'+k);
+    })
+    console.log('outside2'+k);
+    h2.addEventListener('click',function(){
+        k+=10;
+        console.log('h2'+k);
+    })
+    console.log('outside3'+(k+2));
+
+    // 全局变量k，在事件函数外面只能打印初始值；但在函数里面可以进行传递值
+
+</script>
